@@ -11,10 +11,10 @@ import App from './App';
 
 import {
   ApolloProvider,
-  ApolloLink,
+  // ApolloLink,
   ApolloClient,
   createHttpLink,
-  gql,
+  // gql,
 } from "@apollo/client";
 import { InMemoryCache } from "@apollo/client/cache"; 
 
@@ -29,22 +29,22 @@ const client = new ApolloClient({
   cache
 });
 
-client.query({
-  query: gql`
-    {
-      getCollectionsByTitle(title: "hats") {
-        id
-        title
-        items {
-          id
-          name
-          price
-          imageUrl
-        }
-      }
-    }
-  `
-}).then(res => console.log(res));
+// client.query({
+//   query: gql`
+//     {
+//       getCollectionsByTitle(title: "hats") {
+//         id
+//         title
+//         items {
+//           id
+//           name
+//           price
+//           imageUrl
+//         }
+//       }
+//     }
+//   `
+// }).then(res => console.log(res));
 
 ReactDOM.render(
   <ApolloProvider client={client}>
